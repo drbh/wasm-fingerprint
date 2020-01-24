@@ -64,7 +64,12 @@ wasm-opt -Oz -o pkg/wasm_fingerprint_bg.wasm pkg/wasm_fingerprint_bg.wasm
 # ... 
 
 # convert binary to inlinable format - base64
-cat pkg/wasm_fingerprint_bg.wasm | openssl base64 > pkg/wasm_fingerprint_bg.b64
+cat pkg/wasm_fingerprint_bg.wasm | openssl base64 -A > pkg/wasm_fingerprint_bg.b64
 
 # replace fetch block with inliner and replace holder with base64 code
+sed -e '/PLACEHOLDER_FOR_BASE64_WASM_CODE/r pkg/wasm_fingerprint_bg.b64' -e '/PLACEHOLDER_FOR_BASE64_WASM_CODE/d' scripts/inline_wasm_b64.js > lined.js
+
+# take the inliner fix it, and then place it in the JS shim
+python scripts/fix_inline.py
+
 ```

@@ -176,25 +176,12 @@ function getInt32Memory0() {
     }
     return cachegetInt32Memory0;
 }
-
-let stack_pointer = 32;
-
-function addBorrowedObject(obj) {
-    if (stack_pointer == 1) throw new Error('out of js stack');
-    heap[--stack_pointer] = obj;
-    return stack_pointer;
-}
 /**
-* @param {any} f
 * @returns {any}
 */
-__exports.make_fingerprint = function(f) {
-    try {
-        var ret = wasm.make_fingerprint(addBorrowedObject(f));
-        return takeObject(ret);
-    } finally {
-        heap[stack_pointer++] = undefined;
-    }
+__exports.make_fingerprint = function() {
+    var ret = wasm.make_fingerprint();
+    return takeObject(ret);
 };
 
 function handleError(e) {

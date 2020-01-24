@@ -13,7 +13,9 @@ extern "C" {
 }
 
 #[wasm_bindgen]
-pub fn make_fingerprint(f: &js_sys::Function) -> Result<JsValue, JsValue> {
+// pub fn make_fingerprint() -> Result<JsValue, JsValue> {
+pub fn make_fingerprint() -> Result<JsValue, JsValue> {
+    // f: &js_sys::Function
     let window = web_sys::window().expect("should have a window in this context");
     let document = web_sys::window().unwrap().document().unwrap();
     let performance = window
@@ -52,5 +54,6 @@ pub fn make_fingerprint(f: &js_sys::Function) -> Result<JsValue, JsValue> {
     );
     log(&output);
     let x = JsValue::from(output);
-    f.call0(&x)
+    // f.call0(&x)
+    Ok(x)
 }
