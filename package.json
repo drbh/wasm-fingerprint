@@ -1,0 +1,7 @@
+{
+  "name": "wasm-fingerprint",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "David Holtz <david.richard.holtz@gmail.com>",
+  "license": "MIT"
+}
