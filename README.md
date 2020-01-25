@@ -35,7 +35,24 @@ Essentially this allows us to track a user without cookies or any other persiste
 runtime `<20 ms`  
 avg runtime `~5 ms`  
 
-### Run
+### Usage
+
+```js
+// load in the package
+var fpnt = require("wasm-fingerprint");
+
+// make a fingerprint - returns JSON string
+let unique_browser_print = fpnt.make_fingerprint()
+
+// make the string an object
+unique_browser_print = JSON.parse(unique_browser_print)
+
+console.log("Browser Print: ", unique_browser_print)
+// Browser Print:  {ms: 5.530000000362634, print: "CB2BFCAB"}
+```
+
+
+### Run Webpack Example
 
 ```bash
 wasm-pack build --target bundler
