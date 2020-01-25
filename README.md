@@ -32,16 +32,15 @@ Essentially this allows us to track a user without cookies or any other persiste
 
 ### Performance
 
-runtime `<20 ms`
-avg runtime `~5 ms`
+runtime `<20 ms`  
+avg runtime `~5 ms`  
 
-binary `~ 52K`
-binary as base64 `~ 68K`
-JS shim `~ 16K`
-binary and shim `~ 84K`
-binary and shim minified `~ 80K` <- full app
+binary `~ 52K`  
+binary as base64 `~ 68K`  
+JS shim `~ 16K`  
+binary and shim `~ 100K` <- full app  
 
-**GOAL**
+**GOAL**  
 binary and shim minified brotli `~ 20K` <- full app
 
 
