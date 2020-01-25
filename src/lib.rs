@@ -6,11 +6,11 @@ use wasm_bindgen::JsCast;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-#[wasm_bindgen]
-extern "C" {
-    #[wasm_bindgen(js_namespace = console)]
-    fn log(s: &str);
-}
+// #[wasm_bindgen]
+// extern "C" {
+//     #[wasm_bindgen(js_namespace = console)]
+//     fn log(s: &str);
+// }
 
 #[wasm_bindgen]
 // pub fn make_fingerprint() -> Result<JsValue, JsValue> {
@@ -52,7 +52,7 @@ pub fn make_fingerprint() -> Result<JsValue, JsValue> {
         _end - _srt,
         digest.sum32()
     );
-    log(&output);
+    // log(&output);
     let x = JsValue::from(output);
     // f.call0(&x)
     Ok(x)
