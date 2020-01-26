@@ -8,6 +8,15 @@ Fast, small, reliable, embeddable browser canvas fingerprinting implemented in W
 
 We use your browsers canvas rendering engine to create a unique fingerprint for every **computer+browser pair**.
 
+### Usage
+
+```js
+const wf = new WasmFingerprint();
+
+wf.make_fingerprint()
+// {ms: 3.3350000012433156, print: "CB2BFCAB"}
+```
+
 
 ## What is Browser Finger Printing?
 
@@ -34,15 +43,6 @@ Essentially this allows us to track a user without cookies or any other persiste
 
 runtime `<20 ms`  
 avg runtime `~5 ms`  
-
-### Usage
-
-```js
-const wf = new WasmFingerprint();
-
-wf.make_fingerprint()
-// {ms: 3.3350000012433156, print: "CB2BFCAB"}
-```
 
 
 ### Run Webpack Example
