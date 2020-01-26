@@ -38,17 +38,10 @@ avg runtime `~5 ms`
 ### Usage
 
 ```js
-// load in the package
-var fpnt = require("wasm-fingerprint");
+const wf = new WasmFingerprint();
 
-// make a fingerprint - returns JSON string
-let unique_browser_print = fpnt.make_fingerprint()
-
-// make the string an object
-unique_browser_print = JSON.parse(unique_browser_print)
-
-console.log("Browser Print: ", unique_browser_print)
-// Browser Print:  {ms: 5.530000000362634, print: "CB2BFCAB"}
+wf.make_fingerprint()
+// {ms: 3.3350000012433156, print: "CB2BFCAB"}
 ```
 
 

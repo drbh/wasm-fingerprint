@@ -2,3 +2,4 @@
 **/*.rs.bk
 Cargo.lock
 # inline_wasm_b64.js
+runme

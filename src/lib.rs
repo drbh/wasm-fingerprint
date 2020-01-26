@@ -6,15 +6,15 @@ use wasm_bindgen::JsCast;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-// #[wasm_bindgen]
-// extern "C" {
-//     #[wasm_bindgen(js_namespace = console)]
-//     fn log(s: &str);
-// }
+#[wasm_bindgen]
+extern "C" {
+    #[wasm_bindgen(js_namespace = console)]
+    fn log(s: &str);
+}
 
 #[wasm_bindgen]
 // pub fn make_fingerprint() -> Result<JsValue, JsValue> {
-pub fn make_fingerprint() -> Result<JsValue, JsValue> {
+pub fn make_fingerprint() -> Result<String, JsValue> {
     // f: &js_sys::Function
     let window = web_sys::window().expect("should have a window in this context");
     let document = web_sys::window().unwrap().document().unwrap();
@@ -47,13 +47,13 @@ pub fn make_fingerprint() -> Result<JsValue, JsValue> {
     let mut digest = crc32::Digest::new_with_initial(crc32::IEEE, 0u32);
     digest.write(&daturl.as_bytes());
     let _end = performance.now();
+
     let output = format!(
-        "{{\n\t\"ms\": {:?},\n\t\"print\": \"{:X}\"\n}}",
+        "{{\"ms\": {:?},\"print\": \"{:X}\"}}",
         _end - _srt,
         digest.sum32()
     );
     // log(&output);
-    let x = JsValue::from(output);
-    // f.call0(&x)
-    Ok(x)
+    // let x = JsValue::from_str(&output);
+    Ok(output)
 }
