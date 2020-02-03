@@ -28,10 +28,10 @@ Every computer and browser engine renders a slightly diffrent canvas output when
 
 Essentially this allows us to track a user without cookies or any other persisted method. We use the unique user's computer to generate a fingerprint on page load.
 
-### 🏃‍♂️ Run Example
+### 🏃‍♂️ Run Example (✨ Updated)
 
 ```bash
-cd pkg
+cd web-example
 
 ## start a server 
 # npm install http-server -g
