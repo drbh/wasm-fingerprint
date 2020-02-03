@@ -47,7 +47,13 @@ wf.make_fingerprint()
 // {ms: 3.3899999980349094, print: "CB2BFCAB"}
 
 // // ✨ YOUR BROWSER FINGERPRINT SHOUD BE LOGGED TO THE CONSOLE 🎉 
-````
+```
+
+The *ms* refers to the milliseconds wasm-fingerprint took to add, draw and hash the canvas objects needed to create a unique print. The *print* is the 99+% unique id.
+
+This id's entropy is from the hard and software so it should be static as long as the user does not change those things. 
+
+What this allows us to do is track a user without any cookies. For instance their fingerprint will be identical in normal and private browsing mode.
 
 ### Notes on using
 
