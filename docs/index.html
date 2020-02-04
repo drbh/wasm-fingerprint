@@ -435,11 +435,13 @@ class WasmFingerprint {
 }
 </script>
 <script type="text/javascript">
-const wf = new WasmFingerprint();
-
 setTimeout(() => {
-    document.getElementById('fingerprint').innerHTML = wf.make_fingerprint()["print"]
-}, 100)
+    const wf = new WasmFingerprint();
+
+    setTimeout(() => {
+        document.getElementById('fingerprint').innerHTML = wf.make_fingerprint()["print"]
+    }, 300)
+}, 300)
 </script>
 
 </html>
