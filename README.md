@@ -8,6 +8,12 @@ Fast, small, reliable, embeddable browser canvas fingerprinting implemented in W
 
 We use your browsers canvas rendering engine to create a unique fingerprint for every **computer+browser pair**.
 
+### 🆕 TRY IT ON YOUR BROWSER
+
+https://drbh.github.io/wasm-fingerprint/
+
+Try opening the same window in private browser mode, is the fingerprint the same?
+
 ### Usage
 
 ```js
